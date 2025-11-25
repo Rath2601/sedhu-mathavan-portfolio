@@ -15,17 +15,23 @@
         <!--===== HEADER =====-->
         <header class="l-header">
             <nav class="nav bd-grid">
-                <div>
-                    <a href="index.html" class="nav__logo">Sedhu Mathavan</a>
+                <div class="nav__brand">
+                    <a href="index.html" class="nav__logo">SM</a>
                 </div>
 
                 <div class="nav__menu" id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
-                        <li class="nav__item"><a href="about.html" class="nav__link">About</a></li>
+                        <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                         <li class="nav__item"><a href="#work" class="nav__link">Work</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>
+                </div>
+
+                <div class="nav__social">
+                    <a href="#" class="nav__social-icon" title="IMDb"><i class='bx bxl-imdb'></i></a>
+                    <a href="#" class="nav__social-icon" title="Instagram"><i class='bx bxl-instagram'></i></a>
+                    <a href="#" class="nav__social-icon" title="YouTube"><i class='bx bxl-youtube'></i></a>
                 </div>
 
                 <div class="nav__toggle" id="nav-toggle">
@@ -34,40 +40,118 @@
             </nav>
         </header>
 
+        <!-- Film Strip Decoration -->
+        <div class="film-strip film-strip--top"></div>
+        
+        <!-- Clapperboard Badge -->
+        <a href="#contact" class="clapperboard">
+            <div class="clapperboard__top"></div>
+            <div class="clapperboard__text">CONTACT</div>
+        </a>
+
         <main class="l-main">
-            <!--===== HOME =====-->
+            <!--===== HOME / OPENING SCENE =====-->
             <section class="home bd-grid" id="home">
-                <div class="home__content">
-                    <span class="home__title">Screenplay Writer & Aspiring Director</span>
-                    <p class="home__description">
-                        Passionate storyteller crafting compelling narratives for the silver screen.
-                    </p>
-                    <div class="home__stats">
-                        <div class="stat">
-                            <span class="stat__number">15+</span>
-                            <span class="stat__label">Short Films</span>
+                <!-- Script Lines Decoration -->
+                <div class="script-lines">
+                    <span>INT. PORTFOLIO - DAY</span>
+                </div>
+                
+                <div class="home__container">
+                    <div class="home__content">
+                        <div class="typewriter-wrapper">
+                            <div class="home__pretitle">[ FADE IN: ]</div>
+                            <h1 class="home__title">
+                                <span class="title-line">SEDHU</span>
+                                <span class="title-line">MATHAVAN</span>
+                            </h1>
+                            <div class="home__role-wrapper">
+                                <span class="cursor-blink">|</span>
+                                <p class="home__role">Screenplay Writer & Aspiring Director</p>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <span class="stat__number">8</span>
-                            <span class="stat__label">Festival Nominations</span>
+                        
+                        <div class="dialogue-box">
+                            <div class="character-name">NARRATOR (V.O.)</div>
+                            <p class="dialogue-text">
+                                From IF conditions to IF clauses in scripts. 
+                                A software engineer turned storyteller, 
+                                crafting compelling narratives for the silver screen.
+                            </p>
                         </div>
-                        <div class="stat">
-                            <span class="stat__number">3</span>
-                            <span class="stat__label">Awards</span>
+
+                        <!-- Scene Counter Stats -->
+                        <div class="scene-counter">
+                            <div class="counter-item">
+                                <div class="counter-reel"></div>
+                                <span class="counter-number">15+</span>
+                                <span class="counter-label">SHORT FILMS</span>
+                            </div>
+                            <div class="counter-item">
+                                <div class="counter-reel"></div>
+                                <span class="counter-number">8</span>
+                                <span class="counter-label">FESTIVAL NOMINATIONS</span>
+                            </div>
+                            <div class="counter-item">
+                                <div class="counter-reel"></div>
+                                <span class="counter-number">3</span>
+                                <span class="counter-label">AWARDS</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Film Frame Photo -->
+                    <div class="home__image">
+                        <div class="film-frame">
+                            <div class="film-frame__border">
+                                <div class="film-frame__image">
+                                    <img src="assets/img/perfil.png" alt="Sedhu Mathavan">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
 
+            <!--===== ABOUT / BACKSTORY =====-->
+            <section class="about section" id="about">
+                <div class="section-header">
+                    <div class="scene-marker">[ BACKSTORY ]</div>
+                    <h2 class="section-title">ABOUT</h2>
+                    <div class="section-subtitle">THE JOURNEY OF A STORYTELLER</div>
+                </div>
 
+                <div class="about__container bd-grid">
+                    <div class="about__content">
+                        <h2 class="about__subtitle">My Journey</h2>
+                        <p class="about__text">
+                            I'm Sedhu Mathavan R S, a curious yet calm and composed individual from Pattukkottai, Tamil Nadu. I graduated in Civil Engineering from Alagappa Government Engineering College, Karaikudi, and worked as a Software Engineer at TCS for two years.
+                        </p>
+                        <p class="about__text">
+                            Somewhere, life got stuck between IF conditions and FOR loops, and I found my way back to what I always wanted to do — CINEMA. I have always dreamed of becoming a filmmaker since my school days, but like many from a middle-class Indian family, I didn't have the chance to think about it earlier.
+                        </p>
+                        <p class="about__text">
+                            So, I finally decided to type 'BREAK' from everything and follow my calling. I'm now pursuing Screenplay Writing at SRFTI, Kolkata, exploring the craft of filmmaking and discovering how to shape emotions, experiences, and ideas into stories that truly resonate on screen.
+                        </p>           
+                    </div>                                   
+                </div>
+            </section>
 
-            <!--===== WORK =====-->
+            <!--===== WORK / PORTFOLIO REEL =====-->
             <section class="work section" id="work">
-                <h2 class="section-title">My Work</h2>
+                <div class="section-header">
+                    <div class="scene-marker">[ SCENE 02 ]</div>
+                    <h2 class="section-title">PORTFOLIO REEL</h2>
+                    <div class="section-subtitle">A COLLECTION OF CINEMATIC STORIES</div>
+                </div>
 
                 <!-- Screenplay Writer Section -->
                 <div class="work__category">
-                    <h3 class="work__category-title">Screenplay Writer</h3>
+                    <div class="category-header">
+                        <div class="film-reel-icon"></div>
+                        <h3 class="work__category-title">ACT I: Screenplay Writer</h3>
+                        <div class="category-line"></div>
+                    </div>
                     <div class="work__container">
                         <a href="work1.html" class="work__img" data-gist="A poignant tale of a fisherman's struggle against climate change and changing monsoon patterns that threaten his livelihood.">
                             <img src="assets/img/work1.jpg" alt="The Last Monsoon">
@@ -88,7 +172,11 @@
 
                 <!-- Director Section -->
                 <div class="work__category">
-                    <h3 class="work__category-title">Director</h3>
+                    <div class="category-header">
+                        <div class="film-reel-icon"></div>
+                        <h3 class="work__category-title">ACT II: Director</h3>
+                        <div class="category-line"></div>
+                    </div>
                     <div class="work__container">
                         <a href="work2.html" class="work__img" data-gist="A noir-style thriller exploring the hidden stories of Mumbai's underbelly through the eyes of a street photographer.">
                             <img src="assets/img/work2.jpg" alt="Shadows of Mumbai">
@@ -109,7 +197,11 @@
 
                 <!-- Actor Section -->
                 <div class="work__category">
-                    <h3 class="work__category-title">Actor</h3>
+                    <div class="category-header">
+                        <div class="film-reel-icon"></div>
+                        <h3 class="work__category-title">ACT III: Actor</h3>
+                        <div class="category-line"></div>
+                    </div>
                     <div class="work__container">
                         <a href="work3.html" class="work__img" data-gist="A powerful social commentary about a mute protester who finds his voice through art and silent resistance.">
                             <img src="assets/img/work3.jpg" alt="The Silent Protest">
@@ -129,9 +221,13 @@
                 </div>
             </section>
 
-            <!--===== CONTACT =====-->
+            <!--===== CONTACT / FINAL SCENE =====-->
             <section class="contact section" id="contact">
-                <h2 class="section-title">Let's Collaborate</h2>
+                <div class="section-header">
+                    <div class="scene-marker">[ FINAL SCENE ]</div>
+                    <h2 class="section-title">LET'S COLLABORATE</h2>
+                    <div class="section-subtitle">THE STORY CONTINUES WITH YOU</div>
+                </div>
 
                 <div class="contact__container bd-grid">
                     <div class="contact__info">
@@ -164,15 +260,40 @@
             </section>
         </main>
 
-        <!--===== FOOTER =====-->
+        <!--===== FOOTER / END CREDITS =====-->
         <footer class="footer">
-            <p class="footer__title">Sedhu Mathavan</p>
-            <div class="footer__social">
-                <a href="#" class="footer__icon"><i class='bx bxl-imdb' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
-                <a href="#" class="footer__icon"><i class='bx bxl-youtube' ></i></a>
+            <div class="credits-roll">
+                <div class="credits-item">
+                    <span class="credits-role">WRITTEN & DIRECTED BY</span>
+                    <span class="credits-name">SEDHU MATHAVAN</span>
+                </div>
+                
+                <div class="footer__social">
+                    <a href="#" class="footer__icon"><i class='bx bxl-imdb' ></i></a>
+                    <a href="#" class="footer__icon"><i class='bx bxl-instagram' ></i></a>
+                    <a href="#" class="footer__icon"><i class='bx bxl-youtube' ></i></a>
+                </div>
+                
+                <div class="credits-item">
+                    <span class="credits-role">PRODUCTION</span>
+                    <span class="credits-name">SRFTI, KOLKATA</span>
+                </div>
+                
+                <div class="credits-item">
+                    <span class="credits-role">LOCATION</span>
+                    <span class="credits-name">MUMBAI, INDIA</span>
+                </div>
             </div>
-            <p class="footer__copy">&#169; Sedhu Mathavan. All rights reserved</p>
+            
+            <div class="footer__divider"></div>
+            
+            <p class="footer__copy">
+                <span class="copyright-symbol">©</span> 
+                <span class="copyright-year">2024</span> 
+                SEDHU MATHAVAN. ALL RIGHTS RESERVED
+            </p>
+            
+            <div class="fade-out">[ FADE TO BLACK ]</div>
         </footer>
 
 
