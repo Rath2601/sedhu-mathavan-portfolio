@@ -56,7 +56,9 @@ const workImages = document.querySelectorAll('.work__img');
 
 workImages.forEach(img => {
   const gist = img.getAttribute('data-gist');
+  let isActive = false;
   
+  // Mouse events for desktop
   img.addEventListener('mouseenter', () => {
     const overlay = img.querySelector('.work__overlay');
     const existingGist = overlay.querySelector('.work__gist');
@@ -76,6 +78,41 @@ workImages.forEach(img => {
       gistElement.remove();
     }
   });
+  
+  // Touch events for mobile
+  img.addEventListener('touchstart', (e) => {
+    // Don't prevent default to allow link navigation
+    const overlay = img.querySelector('.work__overlay');
+    
+    if (!isActive) {
+      // Show overlay
+      img.classList.add('work__img--active');
+      isActive = true;
+      
+      // Add gist if not exists
+      const existingGist = overlay.querySelector('.work__gist');
+      if (!existingGist && gist) {
+        const gistElement = document.createElement('div');
+        gistElement.className = 'work__gist';
+        gistElement.textContent = gist;
+        overlay.appendChild(gistElement);
+      }
+    }
+  });
+});
+
+// Close any active work card when clicking outside
+document.addEventListener('touchstart', (e) => {
+  if (!e.target.closest('.work__img')) {
+    workImages.forEach(img => {
+      img.classList.remove('work__img--active');
+      const overlay = img.querySelector('.work__overlay');
+      const gistElement = overlay.querySelector('.work__gist');
+      if (gistElement) {
+        gistElement.remove();
+      }
+    });
+  }
 }); 
 
 sr.reveal('.home__content',{}); 

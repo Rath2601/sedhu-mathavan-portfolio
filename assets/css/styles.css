@@ -1168,11 +1168,27 @@ img {
     0 0 50px rgba(212, 175, 55, 0.5),
     inset 0 0 30px rgba(212, 175, 55, 0.15);
   border-color: var(--cinematic-gold);
+  transform: translateY(-20px) scale(1.05);
 }
 
-.work__img:hover {
-  transform: translateY(-20px) scale(1.05);
+/* Active state for mobile touch */
+.work__img--active {
+  box-shadow: 
+    0 30px 80px rgba(0, 0, 0, 0.9),
+    0 0 50px rgba(212, 175, 55, 0.5),
+    inset 0 0 30px rgba(212, 175, 55, 0.15);
   border-color: var(--cinematic-gold);
+}
+
+.work__img--active .work__overlay {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
+
+.work__img--active .work__overlay h3,
+.work__img--active .work__overlay p {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
 .work__img img {
@@ -1247,14 +1263,16 @@ img {
   );
   color: var(--text-primary);
   padding: 3rem 2rem 2.5rem;
-  transform: translateY(calc(100% - 70px));
+  transform: translateY(100%);
   transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   z-index: 4;
   border-radius: 0 0 10px 10px;
+  opacity: 0;
 }
 
 .work__img:hover .work__overlay {
   transform: translateY(0);
+  opacity: 1;
   background: linear-gradient(
     to top,
     rgba(10, 10, 10, 0.98) 0%,
@@ -1273,7 +1291,7 @@ img {
   text-transform: uppercase;
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.5);
   transform: translateY(10px);
-  opacity: 0.9;
+  opacity: 0;
   transition: all 0.4s ease 0.1s;
 }
 
@@ -1291,7 +1309,7 @@ img {
   letter-spacing: 2px;
   font-weight: 600;
   font-family: 'Courier New', monospace;
-  opacity: 0.8;
+  opacity: 0;
   transform: translateY(10px);
   transition: all 0.4s ease 0.15s;
   padding: 4px 8px;
@@ -1837,8 +1855,36 @@ textarea.contact__input {
     gap: 1.5rem;
   }
   
+  /* Mobile: Show a peek of the overlay to indicate more info */
   .work__overlay {
-    transform: translateY(calc(100% - 50px));
+    transform: translateY(calc(100% - 60px));
+    opacity: 1;
+    padding: 2rem 1.5rem 1.5rem;
+  }
+  
+  /* On mobile tap/active, show full overlay */
+  .work__img:active .work__overlay,
+  .work__img:focus .work__overlay {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  
+  .work__overlay h3 {
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+  }
+  
+  .work__overlay p {
+    font-size: 11px;
+  }
+  
+  .work__img {
+    /* Reduce transform on mobile for better performance */
+    transform: none;
+  }
+  
+  .work__img:hover {
+    transform: translateY(-10px) scale(1.02);
   }
   
   .contact__container {
@@ -1945,6 +1991,30 @@ textarea.contact__input {
     font-size: 13px;
     padding: 0.75rem 1rem;
   }
+  
+  /* Work cards for small phones */
+  .work__overlay {
+    transform: translateY(calc(100% - 55px));
+    padding: 1.5rem 1rem 1rem;
+  }
+  
+  .work__overlay h3 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .work__overlay p {
+    font-size: 10px;
+  }
+  
+  .work__img {
+    border-width: 3px;
+    border-radius: 12px;
+  }
+  
+  .work__img:hover {
+    transform: translateY(-8px) scale(1.01);
+  }
 }
 
 /* Tablets */
@@ -2018,6 +2088,17 @@ textarea.contact__input {
   .work__container {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
+  }
+  
+  /* Tablets: Use hover behavior, not tap */
+  .work__overlay {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  
+  .work__img:hover .work__overlay {
+    transform: translateY(0);
+    opacity: 1;
   }
   
   .contact__container {
